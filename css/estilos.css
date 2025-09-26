@@ -1,0 +1,257 @@
+/* ==== FONDOS ==== */
+/* ==== FONDOS GLOBALES ==== */
+
+/* Fondo naranja claro para TODAS las páginas */
+body {
+  background-color: #fff4e0 !important;
+  background-image: none !important;
+}
+
+/* La página principal sigue con imagen de ladrillos */
+body.fondo-inicio {
+  background-image: url("../img/ladrillos.jpg") !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: unset !important;
+}
+
+
+/* ==== CONTENEDOR PRINCIPAL ==== */
+
+.tarjeta-perfil {
+  max-width: 960px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==== FOTO Y DATOS DEL PROFESIONAL ==== */
+
+.foto-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
+
+.foto-perfil img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.info h2 {
+  margin: 0;
+  font-size: 32px;
+  color: #c80000;
+}
+
+h2 small {
+  font-size: 18px;
+  color: #555;
+  font-style: italic;
+  margin-left: 8px;
+}
+
+.detalle-dato {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.detalle-dato i {
+  margin-right: 10px;
+  color: #c80000;
+  font-size: 18px;
+}
+
+.contacto-desc {
+  margin-top: 20px;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #444;
+}
+
+.calificacion-promedio {
+  font-size: 1.1em;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* ==== FORMULARIO DE COMENTARIO ==== */
+
+.form-comentario {
+  margin-top: 50px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.estrellas label {
+  margin-right: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.estrellas input:checked ~ label {
+  color: #ffcc00;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-size: 1rem;
+}
+
+/* ==== BOTONES ==== */
+
+button,
+.btn-ver-trabajos,
+.boton-profesional {
+  margin-top: 20px;
+  padding: 10px 24px;
+  background-color: #c80000;
+  color: white;
+  font-size: 17px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+.btn-ver-trabajos:hover,
+.boton-profesional:hover {
+  background-color: #a50000;
+  transform: translateY(-1px);
+}
+
+.aviso-login {
+  color: #a50000;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* ==== GALERÍA DE TRABAJOS ==== */
+
+.galeria-trabajos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.trabajo-item {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.trabajo-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.trabajo-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* ==== COMENTARIOS ==== */
+
+.comentarios-profesional {
+  margin-top: 40px;
+}
+
+.comentario-item {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.comentario-item .nombre {
+  font-weight: bold;
+  color: #c80000;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.comentario-item .texto {
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.comentario-item .calificacion {
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.comentario-item .fecha {
+  font-size: 0.85em;
+  color: #aaa;
+}
+/* ==== PERFIL CLIENTE (Visual Moderno) ==== */
+
+.tarjeta-perfil.cliente h2 {
+  color: #0066cc;
+}
+
+.foto-perfil.redonda img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid #eee;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.select-favoritos {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.form-foto input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+      .contenedor {
+        padding: 10%;
+        background-image: url("../img/fondo.png");
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
