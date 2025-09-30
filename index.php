@@ -140,7 +140,7 @@ session_start();
     </main>
 
     <footer>
-        <p>Proyecto final para la carrera de Tecnicatura Universitaria en Programación comisión 4C - UTN.</p>
+        <p>Proyecto final para la carrera de Tecnicatura Universitaria en Programación comisión 4C - UTN. Damian Noble Nestor Fernandez</p>
     </footer>
 
 </div>
