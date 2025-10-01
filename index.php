@@ -51,7 +51,7 @@ session_start();
                 }
 
     .logo {
-                width: 10%;
+                width: 15%;
                 height: auto;
                 position: static;
                 margin: 0;
