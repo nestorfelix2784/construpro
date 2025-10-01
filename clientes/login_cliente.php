@@ -98,9 +98,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         <form method="POST">
                         <label>Email:</label>
-                        <input type="email" name="email" required placeholder="tu_email@aqui.com"><br>
+                        <input type="email" name="email" required placeholder="mail-de ejemplo@gmail.com"><br>
                         <label>Contraseña:</label>
-                        <input type="password" name="contraseña" required><br>
+                        <input type="password" name="contraseña" required placeholder="tu contraseña aqui"><br>
                         <button type="submit">Ingresar</button>
                         </form >
                         <p><a href="registro_cliente.php">¿No tienes cuenta? Regístrate</a></p>

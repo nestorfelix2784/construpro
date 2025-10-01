@@ -74,16 +74,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php if (!empty($error)) echo "<div class='error'>" . htmlspecialchars($error) . "</div>"; ?>
 
         <form method="POST">
-            <input type="email" name="email" placeholder="Correo electrónico" required>
-            <input type="password" name="contraseña" placeholder="Contraseña" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="mail-ejemplo@gmail.co" required>
+            <label for="contraseña">Contraseña</label>
+            <input type="contraseña" name="contraseña" placeholder="aqui tu Contraseña" required>
             <button type="submit">Iniciar Sesión</button>
         </form>
 
-        <div class="links">
+       <!-- <div class="links">
             <a href="registro_profesional.php">Registrarme</a>
             <a href="recuperar_contrasena.php">Olvidé mi contraseña</a>
             <a href="../index.php">volver al inicio</a>
-        </div>
+        </div>-->
+          <p><a href="registro_profesional.php">¿No tienes cuenta? Regístrate</a></p>
+                        <p><a href="recuperar_contraseña.php">¿Olvidaste tu contraseña?</a></p>
+                        <p> <a href="../index.php">volver al inicio</a></p>
     </div>
 
     </div>
