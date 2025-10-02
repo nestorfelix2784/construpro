@@ -6,7 +6,7 @@ if (!isset($_SESSION['profesional_id'])) {
 }
 
 include_once '../includes/conexion.php';
-include_once '../includes/header.php';
+
 
 // Mostrar mensaje si existe
 $mensaje_eliminacion = $_SESSION['mensaje_eliminado'] ?? null;
@@ -23,7 +23,9 @@ $resultado = $stmt->get_result();
 $profesional = $resultado->fetch_assoc();
 ?>
 
-<div style="max-width:800px;margin:20px auto;padding:20px;border:1px solid #ccc;border-radius:10px;font-family:sans-serif;background:#fff;">
+
+<div   style= "padding: 1px;background-image: url('../img/fondo.png');background-size: cover;background-position: center;text-align: center;">
+<div style="max-width:700px;margin:20px auto;padding:20px;border:1px solid #ccc;border-radius:10px;font-family:sans-serif;background:#fff;">
     <?php if ($mensaje_eliminacion): ?>
         <div style="background:#28a745;color:white;padding:10px;border-radius:5px;margin-bottom:20px;text-align:center;animation:fadeOut 4s ease forwards;">
             <?php echo $mensaje_eliminacion; ?>
@@ -38,7 +40,7 @@ $profesional = $resultado->fetch_assoc();
     <?php endif; ?>
 
     <h2 style="text-align:center;">👷 Perfil Profesional</h2>
-    <div style="text-align:center;margin-bottom:15px;">
+    <div style="text-align:center;margin:0;">
         <?php
         if($profesional){
             $foto = !empty($profesional['foto']) ? $profesional['foto'] : 'perfil.png';
@@ -107,5 +109,5 @@ $profesional = $resultado->fetch_assoc();
     ?>
 
 </div>
-
+</div>
 <?php include_once '../includes/footer.php'; ?>

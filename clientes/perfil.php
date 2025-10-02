@@ -11,6 +11,7 @@ if (!isset($_SESSION['cliente_id'])) {
 include_once __DIR__ . '/../includes/conexion.php';
 $cliente_id = $_SESSION['cliente_id'];
 
+
 // Obtener datos del cliente
 $stmt = $conexion->prepare("SELECT * FROM clientes WHERE id = ?");
 $stmt->bind_param("i", $cliente_id);
@@ -63,16 +64,19 @@ $resultadoFav = $stmtFav->get_result();
   <title>Mi Perfil - Construpro</title>
   <link rel="stylesheet" href="/construpro/css/estilos.css?v=<?php echo time(); ?>">
   <script src="https://kit.fontawesome.com/3f3e0e8a56.js" crossorigin="anonymous"></script>
+        
+ 
 </head>
 <body>
+    <button> <a href="../index.php">volver al inicio</a></button>
 <div class="tarjeta-perfil cliente">
   <!-- FOTO + INFO -->
   <div class="foto-info">
     <div class="foto-perfil redonda">
       <?php if (file_exists("../imagenes/clientes/" . $cliente_id . ".jpg")): ?>
         <img src="../imagenes/clientes/<?php echo $cliente_id; ?>.jpg"
-             alt="Foto de perfil"
-             onerror="this.src='/construpro/uploads/foto_perfil/default.png';" />
+              alt="Foto de perfil"
+              onerror="this.src='/construpro/uploads/foto_perfil/default.png';" />
       <?php else: ?>
         <img src="/construpro/uploads/foto_perfil/default.png" alt="Sin foto de perfil" />
       <?php endif; ?>
@@ -133,3 +137,4 @@ $resultadoFav = $stmtFav->get_result();
 </div>
 </body>
 </html>
+<?php include_once '../includes/footer.php'; ?>
