@@ -42,6 +42,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($stmt->execute()) {
             $mensaje = "<p class='mensaje success'>Registro exitoso. <a href='login_profesional.php'>Iniciar sesión ahora</a>.</p>";
+                $profesional_id = $stmt->insert_id;
+
+    if (!empty($_POST['oficios'])) {
+        $oficios = $_POST['oficios']; // array desde el formulario
+        $stmt_oficio = $conexion->prepare("INSERT INTO oficios_profesional (profesional_id, oficio) VALUES (?, ?)");
+        foreach ($oficios as $oficio_individual) {
+            $stmt_oficio->bind_param("is", $profesional_id, $oficio_individual);
+            $stmt_oficio->execute();
+        }
+    }
+
         } else {
             $mensaje = "<p class='mensaje error'>Error al registrar. Intentalo de nuevo.</p>";
         }
@@ -124,12 +135,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <label>WhatsApp (opcional)</label>
             <input type="text" name="whatsapp" value="<?php echo htmlspecialchars($whatsapp); ?>">
 
-            <label>Oficio</label>
-            <input type="text" name="oficio" value="<?php echo htmlspecialchars($oficio); ?>" placeholder="Ej: Plomero, Electricista" required>
+            
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<label for="">oficio/profesión</label>
+<select name="oficios[]" multiple id="oficios" required>
+        <option value="Plomero">Plomero</option>
+        <option value="Electricista">Electricista</option>
+        <option value="Gasista">Gasista</option>
+        <option value="Carpintero">Carpintero</option>
+        <option value="Pintor">Pintor</option>
+        <option value="durlok">durlok</option>
+        <option value="jardinero">jardinero</option>
+        <option value="albañil">albañil</option>
+        <option value="herrero">herrero</option>
+</select>
+
+<!-- Activá Select2 -->
+<script>
+    $(document).ready(function() {
+    $('#oficios').select2({
+        placeholder: "Seleccioná uno o más oficios"
+    });
+    });
+</script>
+
+
 
             <label>Provincia</label>
-           <!-- <input type="text" name="provincia" value="<?php echo htmlspecialchars($provincia); ?>" required>--> 
-              <select name="provincia" required>
+        
+            <select name="provincia" required>
     <option value=""> </option>
     <option value="Buenos Aires">Buenos Aires</option>
     <option value="Catamarca">Catamarca</option>
