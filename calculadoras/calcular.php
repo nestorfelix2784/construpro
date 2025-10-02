@@ -54,7 +54,7 @@ $materiales = [
     ]],
     "losa_telgopor" => ["nombre" => "Losa alivianada con telgopor", "unidad" => "m²", "datos" => [
         "Hormigón (m³)" => 0.03,
-        "Viguetas (ml)" => 1.2,
+        "Viguetas (un)" => 1.2,
         "Ladrillos telgopor" => 2,
         "Cemento (kg)" => 9.0,
         "Arena (m³)" => 0.021,
@@ -101,7 +101,7 @@ $largo = (float) ($_POST["largo"] ?? 0.0);
         }
 
         foreach ($materiales[$opcion]["datos"] as $mat => $valor) {
-            $total = ($opcion === "losa_telgopor" && $mat === "Viguetas (ml)") ? $ml_viguetas + $ancho: $valor * $cantidad ;
+            $total = ($opcion === "losa_telgopor" && $mat === "Viguetas (un)") ? ($ml_viguetas + $ancho) / $ancho .' de '.$ancho .' metros': $valor * $cantidad ;
 
             if (str_contains($mat, "kg")) {
                 $bolsas = ceil($total / 25);
@@ -217,7 +217,7 @@ $largo = (float) ($_POST["largo"] ?? 0.0);
     </nav>
     </div>
     <div class="contenedor1">
-        <img src="../img/logo.png" alt="Logo" class="logo">
+
         <h1>🧮 Calculadora de Materiales</h1>
         <form method="POST" action="">
             <label for="tipo" class="opcion">Seleccione el tipo de material o estructura:</label>
