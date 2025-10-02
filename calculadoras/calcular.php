@@ -3,18 +3,38 @@ error_reporting(E_ALL & ~E_DEPRECATED);
 ini_set('display_errors', 1);
 
 $materiales = [
-    "ladrillos_huecos" => ["nombre" => "Pared de ladrillos huecos", "unidad" => "m²", "datos" => [
-        "Ladrillos huecos" => 15,
-        "Cemento (kg)" => 2.2,
-        "Cal (kg)" => 5.0,
-        "Arena (m³)" => 0.042,
-    ]],
-    "ladrillos_macizos" => ["nombre" => "Pared de ladrillos comunes (macizos)", "unidad" => "m²", "datos" => [
-        "Ladrillos macizos" => 55,
-        "Cemento (kg)" => 2.2,
-        "Cal (kg)" => 5.0,
-        "Arena (m³)" => 0.042,
-    ]],
+"ladrillos_huecos12" => [
+    "nombre" => "Pared de ladrillos huecos 12*18*33",
+    "unidad" => "m²",
+    "datos" => [
+        "Ladrillos huecos8" => 16,
+        "Cemento (kg)" => 2.13,
+        "Cal (kg)" => 2.10,
+        "Arena (m³)" => 0.014,
+    ]
+],
+"ladrillos_huecos" => [
+    "nombre" => "Pared de ladrillos huecos 8*18*33",
+    "unidad" => "m²",
+    "datos" => [
+        "Ladrillos huecos" => 16,
+        "Cemento (kg)" => 1.74,
+        "Cal (kg)" => 1.77,
+        "Arena (m³)" => 0.012,
+    ]
+],
+
+        "ladrillos_macizos" => [
+            "nombre" => "Pared de ladrillos comunes (macizos 6*10*20)",
+            "unidad" => "m²",
+            "datos" => [
+            "Ladrillos macizos" => 57,
+            "Cemento (kg)" => 2.2,
+            "Cal (kg)" => 5.65,
+            "Arena (m³)" => 0.022,
+    ]
+],
+
     "bloques" => ["nombre" => "Pared de bloques de hormigón", "unidad" => "m²", "datos" => [
         "Bloques de hormigón" => 13.0,
         "Cemento (kg)" => 9.0,
@@ -35,36 +55,36 @@ $materiales = [
         "Cal (kg)" => 5.0,
         "Arena (m³)" => 0.035,
     ]],
-    "columna" => ["nombre" => "Columna de hormigón 12x20 cm", "unidad" => "metro lineal", "datos" => [
-        "Hormigón (m³)" => 0.024,
-        "Cemento (kg)" => 9.0,
-        "Arena (m³)" => 0.021,
-        "Piedra partida (m³)" => 0.021,
+    "columna" => ["nombre" => "Columna de hormigón ", "unidad" => "unidad", "datos" =>  [
+        "Hormigón (m³)" => 1,
+        "Cemento (kg)" => 320,
+        "Arena (m³)" => 0.429,
+        "Piedra partida (m³)" => 0.429,
     ]],
-    "viga" => ["nombre" => "Viga aérea 25x12 cm", "unidad" => "metro lineal", "datos" => [
-        "Hormigón (m³)" => 0.03,
-        "Cemento (kg)" => 9.0,
-        "Arena (m³)" => 0.021,
-        "Piedra partida (m³)" => 0.021,
+    "viga" => ["nombre" => "Viga aérea ", "unidad" => "metro lineal", "datos" => [
+        "Hormigón (m³)" =>1,
+        "Cemento (kg)" => 320,
+        "Arena (m³)" => 0.429,
+        "Piedra partida (m³)" => 0.429,
     ]],
     "hormigon" => ["nombre" => "Hormigón (general)", "unidad" => "m³", "datos" => [
-        "Cemento (kg)" => 9.0,
-        "Arena (m³)" => 0.021,
-        "Piedra partida (m³)" => 0.021,
+        "Cemento (kg)" => 320,
+        "Arena (m³)" => 0.429,
+        "Piedra partida (m³)" => 0.429,
     ]],
     "losa_telgopor" => ["nombre" => "Losa alivianada con telgopor", "unidad" => "m²", "datos" => [
-        "Hormigón (m³)" => 0.03,
+        "Hormigón (m³)" => 1,
         "Viguetas (un)" => 1.2,
-        "Ladrillos telgopor" => 2,
-        "Cemento (kg)" => 9.0,
-        "Arena (m³)" => 0.021,
-        "Piedra partida (m³)" => 0.021,
+        "Ladrillos telgopor" => 1.2,
+        "Cemento (kg)" => 320,
+        "Arena (m³)" => 0.429,
+        "Piedra partida (m³)" => 0.429,
     ]],
     "encadenado" => ["nombre" => "Encadenado 20x12 cm", "unidad" => "metro lineal", "datos" => [
-        "Hormigón (m³)" => 0.024,
-        "Cemento (kg)" => 9.0,
-        "Arena (m³)" => 0.021,
-        "Piedra partida (m³)" => 0.021,
+        "Hormigón (m³)" => 1,
+        "Cemento (kg)" => 320,
+        "Arena (m³)" => 0.429,
+        "Piedra partida (m³)" => 0.429,
     ]],
 ];
 
@@ -88,12 +108,13 @@ $largo = (float) ($_POST["largo"] ?? 0.0);
         } elseif (in_array($opcion, ["contrapiso", "carpeta"])) {
             $cantidad = $ancho * $largo;
         } elseif ($opcion === "losa_telgopor") {
-            $cantidad = $ancho * $largo;
+            $cantidad = $ancho * $largo *$alto;
+            $ladrillo_telgopor = 2/ 1;
             $viguetas_por_metro = 1 / 0.5;
             $cantidad_viguetas = ceil($largo * $viguetas_por_metro);
             $ml_viguetas = $cantidad_viguetas * $ancho;
         } elseif (in_array($opcion, ["columna", "viga", "encadenado"])) {
-            $cantidad = $largo;
+            $cantidad = $largo * $alto * $ancho ;
         } elseif ($opcion === "hormigon") {
             $cantidad = $ancho * $largo * $alto;
         } else {
@@ -101,7 +122,19 @@ $largo = (float) ($_POST["largo"] ?? 0.0);
         }
 
         foreach ($materiales[$opcion]["datos"] as $mat => $valor) {
-            $total = ($opcion === "losa_telgopor" && $mat === "Viguetas (un)") ? ($ml_viguetas + $ancho) / $ancho .' de '.$ancho .' metros': $valor * $cantidad ;
+         /**    $total = ($opcion === "losa_telgopor" && $mat === "Viguetas (un)") ? ($ml_viguetas + $ancho) / $ancho .' de '.$ancho .' metros': $valor * $cantidad ;*/
+            if ($opcion === "losa_telgopor") {
+            if ($mat === "Viguetas (un)") {
+            $total = $cantidad_viguetas + 1;
+            } elseif ($mat === "Ladrillos telgopor") {
+            $total = ceil($largo * $ancho * $ladrillo_telgopor); // 2 por m²
+            } else {
+            $total = $valor * ($ancho * $largo * $alto); // volumen de hormigón
+            }    
+            } else {
+            $total = $valor * $cantidad;
+}
+
 
             if (str_contains($mat, "kg")) {
                 $bolsas = ceil($total / 25);
@@ -217,7 +250,7 @@ $largo = (float) ($_POST["largo"] ?? 0.0);
     </nav>
     </div>
     <div class="contenedor1">
-
+        <img src="../img/logo.png" alt="" class="logo">
         <h1>🧮 Calculadora de Materiales</h1>
         <form method="POST" action="">
             <label for="tipo" class="opcion">Seleccione el tipo de material o estructura:</label>
