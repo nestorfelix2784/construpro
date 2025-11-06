@@ -4,7 +4,7 @@ $host = 'sjc1.clusters.zeabur.com';
 $port = 30308;
 $user = 'root';
 $password = '953YMoI4cbWOTJjG2uH0yf7l86EN1rzh';
-$database = 'zeabur';
+$database = 'mysql';
 
 $conexion = new mysqli($host, $user, $password, $database, $port);
 if ($conexion->connect_error) {
