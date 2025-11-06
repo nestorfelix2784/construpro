@@ -1,4 +1,5 @@
 <?php
+// sin espacios antes ni después
 $host = 'sjc1.clusters.zeabur.com';
 $port = 30308;
 $user = 'root';
@@ -11,5 +12,6 @@ if ($conexion->connect_error) {
     header("Location: /error_conexion.php");
     exit();
 }
-?>
 
+// Opcional: configurar charset
+$conexion->set_charset("utf8mb4");
