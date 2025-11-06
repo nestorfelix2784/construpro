@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 session_start();
 
 if (!isset($_SESSION['cliente_id'])) {
-    header("Location: /construpro/clientes/login_cliente.php");
+    header("Location: /clientes/login_cliente.php");
     exit();
 }
 
