@@ -117,7 +117,7 @@ session_start();
         <div class="container-fluid py-3">
         <div class="row align-items-center">
             <div class="col-12 col-md-3 text-center">
-            <img src="img/logo.png" alt="Logo Construpro" class="logo img-fluid">
+            <img src="/img/logo.png" alt="Construpro logo showing the company name Construpro next to a stylized construction helmet icon, used as site header branding; conveys a professional and trustworthy tone" class="logo img-fluid">
             </div>
             <div class="col-12 col-md-9">
             <nav class="navbar navbar-expand-lg bg-primary">
