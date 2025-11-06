@@ -1,19 +1,16 @@
+
 <?php
-// Configuración de conexión a la base de datos
-$host = "sjc1.clusters.zeabur.com";
-$puerto = "30308";
-$usuario = "root";
-$contrasena = " 953YMoI4cbWOTJjG2uH0yf7l86EN1rzh";
-$base_datos = "zeabur";
+$host = 'sjc1.clusters.zeabur.com';
+$port = 30308;
+$user = 'root';
+$password = '953YMoI4cbWOTJjG2uH0yf7l86EN1rzh';
+$database = 'zeabur';
 
-// Creacion de la conexión
-$conexion = new mysqli($host, $usuario, $contrasena, $base_datos , $puerto);
+$conexion = new mysqli($host, $user, $password, $database, $port);
 
-// Validacion de la conexión
+// Verificar conexión
 if ($conexion->connect_error) {
-    die("❌ Error de conexión con la base de datos: " . $conexion->connect_error);
+    die("Error de conexión: " . $conexion->connect_error);
 }
-
-
-$conexion->set_charset("utf8");
 ?>
+
