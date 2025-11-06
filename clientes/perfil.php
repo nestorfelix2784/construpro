@@ -76,9 +76,9 @@ $resultadoFav = $stmtFav->get_result();
       <?php if (file_exists("../imagenes/clientes/" . $cliente_id . ".jpg")): ?>
         <img src="../imagenes/clientes/<?php echo $cliente_id; ?>.jpg"
               alt="Foto de perfil"
-              onerror="this.src='/construpro/uploads/foto_perfil/default.png';" />
+              onerror="this.src='/uploads/foto_perfil/default.png';" />
       <?php else: ?>
-        <img src="/construpro/uploads/foto_perfil/default.png" alt="Sin foto de perfil" />
+        <img src="/uploads/foto_perfil/default.png" alt="Sin foto de perfil" />
       <?php endif; ?>
     </div>
 
@@ -96,7 +96,7 @@ $resultadoFav = $stmtFav->get_result();
       <a href="editar_perfil.php" class="boton-profesional">
         <i class="fas fa-user-edit"></i> Editar Perfil
       </a>
-      <a href="/construpro/clientes/logout.php" class="boton-profesional">
+      <a href="/clientes/logout.php" class="boton-profesional">
         <i class="fas fa-sign-out-alt"></i> Cerrar sesión
       </a>
     </div>
@@ -108,7 +108,7 @@ $resultadoFav = $stmtFav->get_result();
   <select onchange="if(this.value) location.href=this.value;" class="select-favoritos">
     <option value="">Seleccioná un profesional...</option>
     <?php while ($fav = $resultadoFav->fetch_assoc()): ?>
-      <option value="/construpro/profesionales/perfil.php?id=<?php echo $fav['id']; ?>">
+      <option value="/profesionales/perfil.php?id=<?php echo $fav['id']; ?>">
         <?php echo htmlspecialchars($fav['nombre']); ?>
       </option>
     <?php endwhile; ?>

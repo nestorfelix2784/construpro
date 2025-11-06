@@ -44,9 +44,9 @@ $profesional = $resultado->fetch_assoc();
         <?php
         if($profesional){
             $foto = !empty($profesional['foto']) ? $profesional['foto'] : 'perfil.png';
-            $ruta_foto = "/construpro/uploads/foto_perfil/" . htmlspecialchars($foto);
+            $ruta_foto = "/uploads/foto_perfil/" . htmlspecialchars($foto);
             } else {
-                $ruta_foto="/construpro/uploads/foto_perfil/perfil.png";
+                $ruta_foto="/uploads/foto_perfil/perfil.png";
             }
         ?>
         <img src="<?php echo $ruta_foto; ?>" alt ="foto de perfil" width="150" style="border-radius: 50%;border:2px solid #aaa;">
