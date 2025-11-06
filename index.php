@@ -129,13 +129,13 @@ session_start();
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav nav__list">
                     <li class="nav-item nav__item">
-                        <a class="nav-link nav__link" href="/construpro/clientes/login_cliente.php">Ingresar como Cliente</a>
+                        <a class="nav-link nav__link" href="/clientes/login_cliente.php">Ingresar como Cliente</a>
                     </li>
                     <li class="nav-item nav__item">
-                        <a class="nav-link nav__link" href="/construpro/profesionales/login_profesional.php">Ingresar como Profesional</a>
+                        <a class="nav-link nav__link" href="/profesionales/login_profesional.php">Ingresar como Profesional</a>
                     </li>
                     <li class="nav-item nav__item">
-                        <a class="nav-link nav__link" href="/construpro/calculadoras/calcular.php">Calcula Material</a>
+                        <a class="nav-link nav__link" href="/calculadoras/calcular.php">Calcula Material</a>
                     </li>
                     </ul>
                 </div>
