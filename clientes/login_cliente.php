@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $cliente['contraseña'])) {
             $_SESSION['cliente_id'] = $cliente['id'];
             $_SESSION['tipo'] = 'cliente'; // 👈 activa navegación para cliente
-            header("Location: /construpro/clientes/perfil.php");
+            header("Location: /clientes/perfil.php");
             exit();
         } else {
             $mensaje = "Contraseña incorrecta.";
