@@ -1,4 +1,3 @@
-
 <?php
 $host = 'sjc1.clusters.zeabur.com';
 $port = 30308;
