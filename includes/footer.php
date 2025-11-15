@@ -7,20 +7,20 @@
                     <h3>Construpro</h3>
                     <p>Conectando clientes con profesionales de la construcción de confianza.</p>
                     <div class="redes-sociales">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook">construpro-de-todos<i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram">mi_construpro<i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter">construpro<i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn">app.construpro<i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-enlaces">
                     <h4>Enlaces Rápidos</h4>
                     <ul>
-                        <li><a href="/construpro/index.php">Inicio</a></li>
-                        <li><a href="/construpro/clientes/buscar_profesionales.php">Buscar Profesionales</a></li>
-                        <li><a href="/construpro/clientes/login.php">Acceso Clientes</a></li>
-                        <li><a href="/construpro/profesionales/login.php">Acceso Profesionales</a></li>
+                        <li><a href="/index.php">Inicio</a></li>
+                        <li><a href="/clientes/buscar_profesionales.php">Buscar Profesionales</a></li>
+                        <li><a href="/clientes/login.php">Acceso Clientes</a></li>
+                        <li><a href="/profesionales/login.php">Acceso Profesionales</a></li>
                     </ul>
                 </div>
                 

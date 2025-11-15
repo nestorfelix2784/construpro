@@ -19,10 +19,31 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--color-texto);
-  background-color: var(--color-fondo);
-  background-image: url("../img/fondo.png");
+  background-image: url("../img/ladrillos.jpg");
   background-attachment: fixed;
   background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.contenedor {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin: 2rem auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .contenedor {
+    margin: 0;
+    border-radius: 0;
+    min-height: 100vh;
+  }
 }
 
 /* ===== HEADER Y NAVEGACIÓN ===== */

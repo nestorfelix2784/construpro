@@ -3,6 +3,6 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: /construpro/index.php");
+header("Location: /index.php");
 exit();
 ?>

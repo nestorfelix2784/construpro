@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['cliente_id'])) {
-    header("Location: /construpro/login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -76,7 +76,7 @@ if ($termino !== '') {
                     <?= htmlspecialchars($pro['partido'] ?? '') ?>,
                     <?= htmlspecialchars($pro['localidad'] ?? '') ?>
                 </p>
-                <a href="/construpro/clientes/ver_profesional.php?id=<?= $pro['id']; ?>" class="boton-ver">👁️ Ver Perfil</a>
+                <a href="/clientes/ver_profesional.php?id=<?= $pro['id']; ?>" class="boton-ver">👁️ Ver Perfil</a>
             </div>
         <?php endforeach; ?>
     <?php else: ?>
