@@ -25,9 +25,9 @@ if (!$profesional) {
 $stmtC = $conexion->prepare("
   SELECT c.*, cl.nombre AS nombre_cliente
   FROM comentarios c
-  JOIN clientes cl ON c.id_cliente = cl.id
-  WHERE c.id_profesional = ?
-  ORDER BY c.fecha DESC
+  JOIN clientes cl ON c.usuario_id = cl.id
+  WHERE c.profesional_id = ?
+  ORDER BY c.fecha_creacion DESC
 ");
 $stmtC->bind_param("i", $profID);
 $stmtC->execute();
@@ -36,7 +36,7 @@ $resultado_comentarios = $stmtC->get_result();
 $stmtP = $conexion->prepare("
   SELECT AVG(calificacion) AS promedio, COUNT(*) AS total
   FROM comentarios
-  WHERE id_profesional = ?
+  WHERE profesional_id = ?
 ");
 $stmtP->bind_param("i", $profID);
 $stmtP->execute();

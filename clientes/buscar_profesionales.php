@@ -76,7 +76,7 @@ if ($termino !== '') {
                     <?= htmlspecialchars($pro['partido'] ?? '') ?>,
                     <?= htmlspecialchars($pro['localidad'] ?? '') ?>
                 </p>
-                <a href="/clientes/ver_profesional.php?id=<?= $pro['id']; ?>" class="boton-ver">👁️ Ver Perfil</a>
+                <a href="ver_profesional.php?id=<?= $pro['id']; ?>" class="boton-ver">👁️ Ver Perfil</a>
             </div>
         <?php endforeach; ?>
     <?php else: ?>
