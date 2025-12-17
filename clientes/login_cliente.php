@@ -64,10 +64,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         }
             .contenedor {
-        padding: 20% 35%;
+         min-width: 100px;
+         max-width: 600px;       
+        padding: 1%;
         color: transparent;
         background-image: url("../img/fondo.png");
-
         background-size: cover;
         background-position: center;
         text-align: center;
