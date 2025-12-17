@@ -65,9 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
             .contenedor {
         padding: 20% 35%;
-        color: #ccc;
+        color: transparent;
         background-image: url("../img/fondo.png");
-        opacity: 0.4;
+        opacity: 0.3;
         background-size: cover;
         background-position: center;
         text-align: center;
