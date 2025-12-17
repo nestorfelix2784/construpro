@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         body { font-family: sans-serif; background: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; }
          .contenedor {
         padding: 1%;
-        background-image: url("img/fondo.png");
+        background-image: url("../img/fondo.png");
         background-size: cover;
         background-position: center;
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
