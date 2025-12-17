@@ -57,7 +57,7 @@ $stmtT->execute();
 $trabajos = $stmtT->get_result()->fetch_all(MYSQLI_ASSOC);
 
 // 5) URLs base
-$baseURL        = '/construpro/uploads';
+$baseURL        = '/uploads';
 $perfilURL      = "{$baseURL}/foto_perfil/" . ($profesional['foto_perfil'] ?: 'default.png');
 $defaultTrabajo = "{$baseURL}/trabajos/default-trabajo.jpg";
 ?>
