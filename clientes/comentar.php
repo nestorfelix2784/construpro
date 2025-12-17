@@ -30,7 +30,7 @@ if (isset($_POST['id_profesional'], $_POST['comentario'], $_POST['calificacion']
             $stmt_check->close();
 
             // Insertar comentario
-            $stmt = $conexion->prepare("INSERT INTO comentarios (id_cliente, id_profesional, comentario, calificacion) VALUES (?, ?, ?, ?)");
+            $stmt = $conexion->prepare("INSERT INTO comentarios (usuario_id, id_profesional, comentario, calificacion) VALUES (?, ?, ?, ?)");
             $stmt->bind_param("iiss", $id_cliente, $id_profesional, $comentario, $calificacion);
             $stmt->execute();
             $stmt->close();
