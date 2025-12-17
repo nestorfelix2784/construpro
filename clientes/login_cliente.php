@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }*/body {
         margin: 0;
         padding: 0;
-        background-color: #0056b3;
+        background-color: #ccc;
         font-family: sans-serif;
     }
         main{
