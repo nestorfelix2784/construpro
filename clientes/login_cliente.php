@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         padding: 0;
         background-color: #ccc;
         font-family: sans-serif;
-        min-width: 200px;
+        min-width: 100px;
     }
         main{
             flex: 1;
