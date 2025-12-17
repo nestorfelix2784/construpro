@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit();
         } else {
             $error = "Contraseña incorrecta.";
-        }
+        } 
     } else {
         $error = "Correo no registrado.";
     }
@@ -34,18 +34,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Login Profesional</title>
     <style>
         body { font-family: sans-serif; background: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; }
-        .contenedor {
-        min-width: 100px;
-        max-width: 600px;
+         .contenedor {
         padding: 1%;
-        color: transparent;
-        background-image: url("../img/fondo.png");
+        background-image: url("img/fondo.png");
         background-size: cover;
         background-position: center;
-        text-align: center;
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        font-family: sans-serif;
-        font-size: medium;
     }
         .logo {
             width: 15%;
