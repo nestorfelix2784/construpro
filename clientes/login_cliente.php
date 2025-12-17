@@ -51,6 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         background-color: #ccc;
         font-family: sans-serif;
         min-width: 100px;
+        max-width: 600px;
+        height: 100vh;
+        margin: auto;
     }
         main{
             flex: 1;
