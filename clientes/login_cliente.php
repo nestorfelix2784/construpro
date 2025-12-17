@@ -50,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         padding: 0;
         background-color: #ccc;
         font-family: sans-serif;
+        min-width: 200px;
     }
         main{
             flex: 1;
@@ -64,9 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         }
             .contenedor {
-         min-width: 100px;
-         max-width: 600px;       
-        padding: 100%;
+               
+        padding: 10%;
         color: transparent;
         background-image: url("../img/fondo.png");
         background-size: cover;
