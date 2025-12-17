@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             .contenedor {
          min-width: 100px;
          max-width: 600px;       
-        padding: 1%;
+        padding: 100%;
         color: transparent;
         background-image: url("../img/fondo.png");
         background-size: cover;
