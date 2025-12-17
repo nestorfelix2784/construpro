@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($upd->execute()) {
             $_SESSION['mensaje_actualizado'] = '✅ Perfil actualizado con éxito.';
-            header("Location: perfil.php");
+            header("Location: /profesionales/perfil.php");
             exit();
         } else {
             $error = '❌ Error al actualizar perfil: ' . $upd->error;
