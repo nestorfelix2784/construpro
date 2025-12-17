@@ -40,9 +40,15 @@ $stmtP = $conexion->prepare("
 ");
 $stmtP->bind_param("i", $profID);
 $stmtP->execute();
-$datos_promedio = $stmtP->get_result()->fetch_assoc();
-$promedio = round($datos_promedio['promedio'], 1) ?: 0;
-$total    = (int)$datos_promedio['total'];
+
+$stmtP->bind_result($promedio, $total);
+$stmtP->fetch();
+
+$promedio = $promedio ?? 0;
+$promedio = round((float)$promedio, 1);
+$total = (int)($total ?? 0);
+
+$stmtP->close();
 
 // 4) Trabajos realizados
 $stmtT = $conexion->prepare("SELECT * FROM trabajos WHERE id_profesional = ?");

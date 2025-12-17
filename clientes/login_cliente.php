@@ -67,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         padding: 20% 35%;
         color: #0056b3;
         background-image: url("../img/fondo.png");
+        opacity: 0.4;
         background-size: cover;
         background-position: center;
         text-align: center;
@@ -74,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         font-family: sans-serif;
         font-size: medium;
     }
-        .card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        .card { background: white; padding: 3rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 100%; max-width: 600px; }
         h2 { text-align: center; margin-bottom: 1.5rem; }
         input, button { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 5px; border: 1px solid #ccc; }
         button { background: #007bff; color: white; border: none; cursor: pointer; }
